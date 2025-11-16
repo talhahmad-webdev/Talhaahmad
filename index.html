@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="images/logo.png" type="logo talha" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Portfolio Website - Talha Ahmad</title>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/logo.png" class="logo" alt="talha logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About </a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <ion-icon
+              name="close"
+              class="nav-menu"
+              onclick="closeMenu()"
+            ></ion-icon>
+          </ul>
+          <ion-icon
+            name="menu"
+            class="nav-menu"
+            onclick="openMenu()"
+          ></ion-icon>
+        </nav>
+        <div class="header-text">
+          <p>Website Developer</p>
+          <h1>Hi , I'm <span> Talha</span> Ahmad<br />from Pakistan</h1>
+          <ul class="logo-link">
+            <li>
+              <a
+                class="header-logo-link"
+                href="https://www.linkedin.com/in/talha-ahmad-817b9128a/"
+                target="_blank"
+                ><ion-icon name="logo-linkedin"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a
+                class="header-logo-link"
+                href="https://github.com/talhahmad-webdev"
+                target="_blank"
+                ><ion-icon name="logo-github"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="header-logo-link" href="#"
+                ><ion-icon name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!---------------------about-------------------->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/user-talha.png" alt="talha's potrait" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p class="about-para-text">
+              Hey! I’m Talha Ahmad, a <span>Website Developer</span> and SEO
+              specialist from Pakistan. I enjoy creating online stores and
+              websites that are clean, responsive, and perform well on search
+              engines. I’ve worked on Shopify themes, product SEO, and digital
+              marketing — everything that helps a business grow online.
+              <br /><br />
+              I’m currently learning more about React and exploring AI
+              integration to build smarter and more dynamic web experiences.
+              When I’m not working, I love listening to music and discovering
+              new sounds. I believe in growing a little every day and creating
+              work that makes a real difference.
+            </p>
+            <div class="tab-title">
+              <p class="tab-links active-link" onclick="opentab('Skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('Education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="Skills">
+              <ul>
+                <li>
+                  <span>Languages</span><br />
+                  <p class="content-subtext">
+                    HTML , CSS , JAVASCRIPT , C++ , Python , MSSQL
+                  </p>
+                </li>
+                <li>
+                  <span>Tools</span><br />
+                  <p class="content-subtext">Visual Studio , Canva , Figma</p>
+                </li>
+                <li>
+                  <span>SEO specialist</span><br />
+                  <p class="content-subtext">ON/OFF page SEO</p>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>Junior Web developer (intern)</span><br />
+                  <p class="content-subtext">Tara Technologies</p>
+                </li>
+                <li>
+                  <span>Shopify development</span><br />
+                  <p class="content-subtext">Freelancing - Fiverr</p>
+                </li>
+                <li>
+                  <span>SEO specialist</span><br />
+                  <p class="content-subtext">Freelancing - Fiverr</p>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="Education">
+              <ul>
+                <li>
+                  <span>2019 - 2020</span><br />
+                  <p class="content-subtext">
+                    Matriculation from The Educators Sahar Campus
+                  </p>
+                </li>
+                <li>
+                  <span>2020 - 2022</span><br />
+                  <p class="content-subtext">
+                    Intermediate from Garrison College Lahore
+                  </p>
+                </li>
+                <li>
+                  <span>2022 - 2026 (current)</span><br />
+                  <p class="content-subtext">Lahore Garrison University</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-----------------------services------------------------>
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <ion-icon name="code-slash-outline"></ion-icon>
+            <h2>Web design</h2>
+            <p class="content-subtext">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Doloribus sint nisi aperiam? Ut, molestias neque dolores eveniet
+              ab ipsum dignissimos, odit provident quasi temporibus iste
+              veritatis culpa, necessitatibus fugiat ex.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <ion-icon name="crop"></ion-icon>
+            <h2>UI design</h2>
+            <p class="content-subtext">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Doloribus sint nisi aperiam? Ut, molestias neque dolores eveniet
+              ab ipsum dignissimos, odit provident quasi temporibus iste
+              veritatis culpa, necessitatibus fugiat ex.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <ion-icon name="apps"></ion-icon>
+            <h2>App design</h2>
+            <p class="content-subtext">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Doloribus sint nisi aperiam? Ut, molestias neque dolores eveniet
+              ab ipsum dignissimos, odit provident quasi temporibus iste
+              veritatis culpa, necessitatibus fugiat ex.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-----------------portfolio---------------->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-1.png" alt="" />
+            <div class="layer">
+              <h3>Social Media App</h3>
+              <p class="content-subtext">
+                this App connects you to the talented people around the world.
+                Downlaod it from google play store
+              </p>
+              <a href="#"><ion-icon class="link" name="link"></ion-icon></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-2.png" alt="" />
+            <div class="layer">
+              <h3>Social Media App</h3>
+              <p class="content-subtext">
+                this App connects you to the talented people around the world.
+                Downlaod it from google play store
+              </p>
+              <a href="#"><ion-icon class="link" name="link"></ion-icon></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-3.png" alt="" />
+            <div class="layer">
+              <h3>Social Media App</h3>
+              <p class="content-subtext">
+                this App connects you to the talented people around the world.
+                Downlaod it from google play store
+              </p>
+              <a href="#"><ion-icon class="link" name="link"></ion-icon></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See More</a>
+      </div>
+    </div>
+    <!----------------------contact---------------------->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p class="content-subtext">
+              <ion-icon name="mail"></ion-icon>talhaahmad6229@gmail.com
+            </p>
+            <p class="content-subtext">
+              <ion-icon name="call"></ion-icon>+92 3191854622
+            </p>
+            <div class="social-icons">
+              <a href="#"
+                ><ion-icon
+                  name="logo-facebook"
+                  class="con-social-link"
+                ></ion-icon
+              ></a>
+              <a href="#"
+                ><ion-icon
+                  name="logo-instagram"
+                  class="con-social-link"
+                ></ion-icon
+              ></a>
+              <a href="#"
+                ><ion-icon
+                  name="logo-linkedin"
+                  class="con-social-link"
+                ></ion-icon
+              ></a>
+              <a href="#"
+                ><ion-icon name="logo-github" class="con-social-link"></ion-icon
+              ></a>
+            </div>
+            <a href="#" class="btn btn-2" download>Download CV</a>
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message "
+              ></textarea>
+              <button type="submit" class="btn btn-2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="copy-right">
+        <p class="content-subtext">
+          ©️ Developer Portfolio by <span> Talha.</span>
+        </p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      const scriptURL =
+        "<https://script.google.com/macros/s/AKfycbz63fc_YqszbTlPIFJqB_XdH5KgD2FkOEhhER6yWqauTSy1dQN1UutxpD0LeutgR5OudA/exec>";
+      const form = document.forms["submit-to-google-sheet"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
