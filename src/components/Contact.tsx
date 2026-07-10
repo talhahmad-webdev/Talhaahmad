@@ -12,9 +12,6 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const scriptURL =
-    "https://script.google.com/macros/s/AKfycbz63fc_YqszbTlPIFJqB_XdH5KgD2FkOEhhER6yWqauTSy1dQN1UutxpD0LeutgR5OudA/exec";
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -24,16 +21,32 @@ export default function Contact() {
     setStatus("loading");
 
     try {
-      const bodyData = new FormData();
-      bodyData.append("Name", formData.name);
-      bodyData.append("email", formData.email);
-      bodyData.append("Message", formData.message);
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey) {
+        console.warn("Web3Forms Access Key is missing. Please configure NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY.");
+      }
 
-      await fetch(scriptURL, {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: bodyData,
-        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey || "YOUR_ACCESS_KEY_HERE",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Portfolio Contact: ${formData.name}`,
+          from_name: "Talha's Portfolio",
+        }),
       });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Failed to send message");
+      }
 
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
@@ -47,7 +60,7 @@ export default function Contact() {
     <section id="contact" className="py-24 md:py-32 bg-[#080808] relative z-10 px-6 border-t border-white/5">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-          
+
           {/* Left Column (Contact Details) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -59,7 +72,7 @@ export default function Contact() {
             <div>
               <p className="text-xs text-accent font-semibold tracking-widest uppercase mb-3">Get In Touch</p>
               <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-8">Contact Me</h2>
-              
+
               <div className="flex flex-col gap-6">
                 <a
                   href="mailto:talhaahmad6229@gmail.com"
@@ -97,8 +110,8 @@ export default function Contact() {
               {/* CV Button */}
               <Magnetic strength={0.2}>
                 <a
-                  href="/resume.pdf"
-                  download="Talha_Ahmad_Resume.pdf"
+                  href="/Talha_Ahmad.pdf"
+                  download="Talha_Ahmad.pdf"
                   className="inline-flex items-center gap-3 px-7 py-3.5 bg-accent hover:bg-accent-dark text-white rounded-full font-medium tracking-wide transition-colors duration-300 mb-8 text-xs border border-accent/20"
                   onMouseEnter={() => setCursorType("hover-link")}
                   onMouseLeave={() => setCursorType("default")}

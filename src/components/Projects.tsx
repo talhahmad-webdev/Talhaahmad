@@ -19,11 +19,32 @@ interface ProjectItem {
 
 const PROJECTS: ProjectItem[] = [
   {
-    title: "OMNIFOOD Website",
+    title: "SafeMother: Pregnancy Health Monitoring System",
+    description: "An IoT-enabled maternal healthcare platform (Final Year Project) designed to monitor pregnant mothers' vitals (heart rate, temperature, SpO2) in real-time. Features biometric sensor integration, cloud-based data streaming, and automated emergency alert systems for early risk detection.",
+    tags: ["Python", "MongoDB", "HTML", "CSS", "JavaScript", "Arduinoide", "IoT", "ESP32", "FastAPI", "REST API", "chart.js"],
+    video: "/images/safemother video.mp4",
+    githubUrl: "https://github.com/talhahmad-webdev/safemother-fyp",
+  },
+  {
+    title: "Cutzncraft Website",
     description: "A modern, responsive landing page for Omnifood, a fictional AI-powered food delivery service. Features clean UI design, responsive layouts, and interactive elements optimized for seamless conversion.",
-    tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    tags: ["shopify", "liquid", "javascript", "html", "css"],
     image: "/images/work-1.png",
-    liveUrl: "https://omnifood-website-silk.vercel.app/",
+    liveUrl: "https://cutzncraft.com/",
+  },
+  {
+    title: "AI Social Awkwardness Assistant",
+    description: "Built an AI-powered web application that analyzes users' text messages to detect emotions such as anxiety, stress, confusion, and confidence using Natural Language Processing (NLP). The system generates personalized AI responses, stores user interaction history, and provides emotion analytics through an interactive dashboard.",
+    tags: ["Python", "Streamlit", "FastAPI", "uvicorn", "pandas", "numpy", "pytorch", "Hugging Face Transformers"],
+    image: "/images/work-3.png",
+    githubUrl: "https://github.com/talhahmad-webdev/ai-awkwardness-detection",
+  },
+  {
+    title: "Fault Detection & Healing System",
+    description: "Developed an AI-powered smart grid fault detection system using BiLSTM, Transformer, and Gemini AI. The system analyzes sensor data to detect faults and generates intelligent self-healing recommendations through LangChain, enabling automated and context-aware grid recovery.",
+    tags: ["Python", "PyTorch", "Scikit-Learn", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Gemini AI", "LangChain"],
+    image: "/images/work-2.png",
+    githubUrl: "https://github.com/talhahmad-webdev/fault_detection_and_self_healing-",
   },
   {
     title: "Digital Voting System",
@@ -32,7 +53,15 @@ const PROJECTS: ProjectItem[] = [
     video: "/images/work-video.mp4",
     githubUrl: "https://github.com/talhahmad-webdev/DigitalVotingSystem-project-",
   },
+  {
+    title: "OmniFood Website",
+    description: "A modern, responsive landing page for Omnifood, a fictional AI-powered food delivery service. Features clean UI design, responsive layouts, and interactive elements optimized for seamless conversion.",
+    tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    image: "/images/work-1.png",
+    liveUrl: "https://omnifood-website-silk.vercel.app/",
+  },
 ];
+
 
 export default function Projects() {
   const { setCursorType } = useCursor();
